@@ -20,6 +20,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '20.0.0'
+          
+      - name: Increase file descriptor limit
+        run: ulimit -n 4096
 
       - name: npm install, build, and test
         run: |
